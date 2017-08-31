@@ -18,5 +18,8 @@ module.exports={
         rst.write(data.toString());
         rst.end("结束")
         return  data; 
+    },
+    xfile:function (dath,data,refn){
+    	fs.writeFile(dath,data,refn);
     }
 }
