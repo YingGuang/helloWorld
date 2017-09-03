@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { name: '输出ejs文件' });
+  res.render('index', {});
   // res.send("zheshisdhsihdsi")
 });
 

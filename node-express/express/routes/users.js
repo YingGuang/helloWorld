@@ -1,19 +1,18 @@
 var express = require('express');
 var router = express.Router();
-
+var c = require("../models/UserModels");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   // res.send('respond with a resource');
   res.send('输出users');
 });
-//  /list_user 页面 GET 请求
-router.get('/list_user', function (req, res) {
-    console.log("/list_user GET 请求");
-    res.send('用户列表页面');
+// 登陆注册
+router.all('/login', function(req, res) {
+    res.render('login');
 });
-//  POST 请求
-router.post('/', function (req, res) {
-    console.log("主页 POST 请求");
-    res.send('Hello POST');
-})
+router.post('/zhuce', function(req, res) {
+    var babab=req.body['email'];
+    c.zhuce(req,res)
+    // res.send("注册成功");
+});
 module.exports = router;

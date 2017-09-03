@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>问吧首页</title>
+    <title><%= title %>开发问吧首页</title>
     <meta charset="UTF-8">
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
@@ -30,7 +30,7 @@
             height:1.5em;
             margin:0 auto;
             font-size:1.5em;
-            display:none;
+            display:hidden;
             text-align:center;
         }
         .menu span{
@@ -66,7 +66,7 @@
         <input type="text"  placeholder="请输入关键词" style="width:240px;height:30px;" >
         <span class="glyphicon glyphicon-zoom-in" style="font-size:1.5em;cursor:pointer;"/>
         &nbsp;
-        <input type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal" href="./users/login" value="登录/注册"/>
+        <input type="button" class="btn btn-success" value="登录/注册"/>
         &nbsp;
     </div>
 </div>
@@ -128,16 +128,6 @@
             </tr>
             </tbody>
         </table>
-    </div>
-</div>
-<!--登陆注册的模块-->
-<div class="modal fade" id="loginModal">
-    <div class="modal-dialog">
-        <div class="modal-content" style="width: 840px;">
-            <!--------href内容----------------->
-
-            <!--------------------------------->
-        </div>
     </div>
 </div>
 </body>
