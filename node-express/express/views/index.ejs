@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>问吧首页</title>
+    <meta charset="UTF-8">
+    <%- include javaS%>
+</head>
+<body>
 <%- include header%>
 <div style="width:1024px;margin:1em auto;">
     <div style="border:1px solid green;width:720px;float:left">
@@ -8,18 +16,38 @@
         </ul>
         <table class="table">
             <tbody class="answer">
+            <%
+            if(rs!=undefined){
+            rs.forEach(function(row){
+            %>
             <tr>
                 <td>
-                    <div>0<br/>回答</div>
+                    <div><%=row['renum']%><br/>回答</div>
                 </td>
-                <td>36<br/>浏览</td>
-                <td>node.js如何与vue.js两线开发</td>
+                <td><%=row['looknum']%><br/>浏览</td>
+                <td><a href="/question/detail?qid=<%=row['id']%>" target="_blank"><%=row['title']%></a></td>
             </tr>
+            <%      })
+            }
+            if(count>0){
+            %>
             <tr>
-                <td><div>3<br/>回答</div></td>
-                <td>12<br/>浏览</td>
-                <td>node.js如何与vue.js两线开发</td>
+                <td colspan="3" align="center">
+                    总共<%=count%>条记录,
+                    第<%=page%>/<%=countPage%>页,
+                    <% if(page!=1){%>
+                    <a href="/?page=1">首页</a>&nbsp;
+                    <a href="/?page=<%=(page-1)%>">上一页</a>&nbsp;
+                    <% } %>
+                    <% if(page!=countPage) {%>
+                    <a href="/?page=<%=(page+1)%>">下一页</a>&nbsp;
+                    <a href="/?page=<%=countPage%>">尾页</a>
+                    <%}%>
+                </td>
             </tr>
+            <%
+            }
+            %>
             </tbody>
         </table>
     </div>
