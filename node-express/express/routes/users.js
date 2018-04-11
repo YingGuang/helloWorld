@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.send('输出users');
 });
 // 登陆注册
-router.all('/login', function(req, res) {
+router.all('/login', function(req, res){
     subflag = req.body['subflag'];
     //console.log(subflag);
     //console.log(subflag==undefined);
